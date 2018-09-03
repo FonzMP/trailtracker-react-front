@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import trailsReducer from "../../reducers/trails_reducer";
 
 class Trail extends Component {
   render() {
