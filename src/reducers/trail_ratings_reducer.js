@@ -1,4 +1,4 @@
-export default function trailsReducer(state = [], action) {
+export default function ratingsReducer(state = [], action) {
   switch (action.type) {
     case "LOADING_TRAIL_RATINGS":
       return (state = []);

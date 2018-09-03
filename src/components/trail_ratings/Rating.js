@@ -7,7 +7,19 @@ class Rating extends Component {
         <li>
           <p>
             <strong>Name: </strong>
-            {this.props.trail.trail.name}
+            {this.props.rating.trail.name}
+          </p>
+          <p>
+            <strong>Length: </strong>
+            {this.props.rating.trail.length}
+          </p>
+          <p>
+            <strong>Rating: </strong>
+            {this.props.rating.rating}
+          </p>
+          <p>
+            <strong>Rated by: </strong>
+            {this.props.rating.user.username}
           </p>
         </li>
       </div>
