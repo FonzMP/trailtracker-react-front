@@ -7,11 +7,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">TrailTracker MC App</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+        <p>
+          TrailTracker is an application designed to provide ease of mind for
+          the solo, and/or safety concious rider in all of us. Our focus is to
+          provide an application that assists in keeping our users safe while
+          adventuring alone, in small groups, or with friends in the great
+          outdoors.
         </p>
       </div>
     );
