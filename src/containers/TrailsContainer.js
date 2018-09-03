@@ -9,7 +9,6 @@ class TrailsContainer extends Component {
   }
 
   render() {
-    console.log(this.props.trails);
     return <Trails trails={this.props.trails} />;
   }
 }
@@ -18,8 +17,8 @@ function mapDispatchToProps(dispatch) {
   return { fetchTrails: () => dispatch(fetchTrails()) };
 }
 
-function mapStateToProps(state) {
-  return { trails: state.trails };
+function mapStateToProps({ trails }) {
+  return { trails: trails };
 }
 
 export default connect(

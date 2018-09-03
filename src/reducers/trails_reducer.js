@@ -1,18 +1,10 @@
-export default function trailsReducer(
-  state = { loading: false, trails: [] },
-  action
-) {
+export default function trailsReducer(state = [], action) {
   switch (action.type) {
     case "LOADING_TRAILS":
-      return (state = { loading: true, trails: [] });
+      return (state = []);
 
     case "FETCH_TRAILS":
-      action.payload.map(trail => {
-        return (state = {
-          ...state,
-          trails: [...state.trails, trail]
-        });
-      });
+      return (state = action.payload);
 
     default:
       return state;
