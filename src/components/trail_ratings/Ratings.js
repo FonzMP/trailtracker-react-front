@@ -13,7 +13,7 @@ class Ratings extends Component {
     return (
       <div>
         <h3>All Ratings</h3>
-        <ul>{this.renderRatings()}</ul>
+        <div className="trails">{this.renderRatings()}</div>
       </div>
     );
   }

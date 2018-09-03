@@ -3,8 +3,7 @@ import React, { Component } from "react";
 class Rating extends Component {
   render() {
     return (
-      <div>
-        <li>
+      <div className="trail">
           <p>
             <strong>Name: </strong>
             {this.props.rating.trail.name}
@@ -21,7 +20,6 @@ class Rating extends Component {
             <strong>Rated by: </strong>
             {this.props.rating.user.username}
           </p>
-        </li>
       </div>
     );
   }

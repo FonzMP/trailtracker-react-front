@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
+import Navigation from './containers/Navigation'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">TrailTracker MC App</h1>
-        </header>
+        <Navigation />
         <p>
           TrailTracker is an application designed to provide ease of mind for
           the solo, and/or safety concious rider in all of us. Our focus is to

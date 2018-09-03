@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Trails from "../components/trails/Trails";
+import Navigation from './Navigation'
 import { connect } from "react-redux";
 import { fetchTrails } from "../actions/trailActions";
 
@@ -9,7 +10,15 @@ class TrailsContainer extends Component {
   }
 
   render() {
-    return <Trails trails={this.props.trails} />;
+    return (
+      <div>
+        <Navigation />
+        <div className="content-body">
+          <Trails trails={this.props.trails} />
+        </div>
+      </div>
+    )
+    
   }
 }
 

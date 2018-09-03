@@ -1,0 +1,35 @@
+/* 
+OU Green - Hex = 00694E
+           RGB = (0, 104, 72)
+OU Tan -   Hex = CDA077
+           RGB = (205, 160, 119)
+*/
+
+.App-header {
+  background: #00694E;
+  height: 50px;
+  padding: 20px;
+  color: #CDA077;
+  text-align: center;
+}
+
+.navigation-div {
+  background: black;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.navigation-link {
+  display: inline-block;
+  padding: 10px 30px;
+}
+
+.navigation-link a {
+  color: #CDA077;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+.navigation-link a:hover {
+  text-shadow: 2px 2px rgba(205, 160, 119, 0.3);
+}

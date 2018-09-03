@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TrailRatings from "../components/trail_ratings/Ratings";
+import Navigation from './Navigation'
 import { connect } from "react-redux";
 import { fetchRatings } from "../actions/trailRatingsActions";
 
@@ -9,7 +10,14 @@ class TrailRatingsContainer extends Component {
   }
 
   render() {
-    return <TrailRatings ratings={this.props.trail_ratings} />;
+    return (
+      <div>
+        <Navigation />
+        <div className="content-body">
+          <TrailRatings ratings={this.props.trail_ratings} />
+        </div>
+      </div>
+    )
   }
 }
 

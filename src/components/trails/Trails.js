@@ -13,7 +13,7 @@ class Trails extends Component {
     return (
       <div>
         <h3>All Trails</h3>
-        <ul>{this.renderTrails()}</ul>
+        <div className="trails">{this.renderTrails()}</div>
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import './containers/navigation.css'
+import './containers/style.css'
 import App from "./App";
 import TrailsContainer from "./containers/TrailsContainer";
 import TrailRatingsContainer from "./containers/TrailRatingsContainer";
