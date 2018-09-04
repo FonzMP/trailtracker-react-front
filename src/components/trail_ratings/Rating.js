@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import '../../containers/style.css'
 
 class Rating extends Component {
   render() {
@@ -6,19 +7,19 @@ class Rating extends Component {
       <div className="trail">
           <p>
             <strong>Name: </strong>
-            {this.props.rating.trail.name}
+            <span>{this.props.rating.trail.name}</span>
           </p>
           <p>
             <strong>Length: </strong>
-            {this.props.rating.trail.length}
+            <span>{this.props.rating.trail.length}</span>
           </p>
           <p>
             <strong>Rating: </strong>
-            {this.props.rating.rating}
+            <span>{this.props.rating.rating}</span>
           </p>
           <p>
             <strong>Rated by: </strong>
-            {this.props.rating.user.username}
+            <span>{this.props.rating.user.username}</span>
           </p>
       </div>
     );

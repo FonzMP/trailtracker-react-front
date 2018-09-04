@@ -7,10 +7,11 @@ OU Tan -   Hex = CDA077
 
 .App-header {
   background: #00694E;
-  height: 50px;
-  padding: 20px;
+  height: 100px;
+  padding: 20px 20px;
   color: #CDA077;
-  text-align: center;
+  font-size: 2em;
+  font-family: 'Patua One', cursive;
 }
 
 .navigation-div {

@@ -6,19 +6,19 @@ class Trail extends Component {
       <div className="trail">
         <p>
           <strong>Name: </strong>
-          {this.props.trail.name}
+          <span>{this.props.trail.name}</span>
         </p>
         <p>
           <strong>Length: </strong>
-          {this.props.trail.length}
+          <span>{this.props.trail.length}</span>
         </p>
         <p>
           <strong>Average Rating: </strong>
-          {this.props.trail.average_rating}
+          <span>{this.props.trail.average_rating}</span>
         </p>
         <p>
           <strong>Contributed by: </strong>
-          {this.props.trail.created_by_username}
+          <span>{this.props.trail.created_by_username}</span>
         </p>
       </div>
     );
