@@ -18,12 +18,6 @@ class TrailsContainer extends Component {
     this.props.fetchTrails();
   }
 
-  // addTrail = trail => {
-  //   this.setState({
-  //     trails: this.props.trails.concat(trail)
-  //   });
-  // };
-
   render() {
     return (
       <div>
@@ -40,7 +34,7 @@ class TrailsContainer extends Component {
 function mapDispatchToProps(dispatch) {
   return {
     fetchTrails: () => dispatch(fetchTrails()),
-    addTrail: () => dispatch(addTrail())
+    addTrail: (name, length) => dispatch(addTrail(name, length))
   };
 }
 
