@@ -1,52 +1,47 @@
 import React, { Component } from "react";
 import Trails from "../components/trails/Trails";
 import TrailInput from "../components/trails/TrailInput";
-import Navigation from './Navigation'
+import Navigation from "./Navigation";
 import { connect } from "react-redux";
-import { fetchTrails } from "../actions/trailActions";
-import '../containers/style.css'
+import { fetchTrails, addTrail } from "../actions/trailActions";
+import "../containers/style.css";
 
 class TrailsContainer extends Component {
-
   constructor() {
-    super()
+    super();
     this.state = {
       trails: []
-    }
+    };
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001/trails.json")
-    .then(response => response.json())
-    .then(trails => this.setState({ trails: trails }));
-  };
-
-  addTrail = (trail) => {
-    this.setState({
-      trails: this.state.trails.concat(trail)
-    })
+    this.props.fetchTrails();
   }
+
+  // addTrail = trail => {
+  //   this.setState({
+  //     trails: this.props.trails.concat(trail)
+  //   });
+  // };
 
   render() {
     return (
       <div>
         <Navigation />
         <div className="content-body">
-          <Trails trails={this.state.trails} />
+          <Trails trails={this.props.trails} />
         </div>
-        <TrailInput trails={this.state.trails} addTrail={this.addTrail}/>
+        <TrailInput trails={this.props.trails} addTrail={this.props.addTrail} />
       </div>
-    )
-    
+    );
   }
 }
 
-
-
 function mapDispatchToProps(dispatch) {
-  return { 
-    fetchTrails: () => dispatch(fetchTrails())
-  }
+  return {
+    fetchTrails: () => dispatch(fetchTrails()),
+    addTrail: () => dispatch(addTrail())
+  };
 }
 
 function mapStateToProps({ trails }) {
