@@ -22,7 +22,6 @@ class TrailInput extends Component {
   };
 
   render() {
-    console.log(this.state.name);
     return (
       <div className="trail-input">
         <h3>Add a Trail</h3>

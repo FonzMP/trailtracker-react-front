@@ -7,8 +7,7 @@ export default function trailsReducer(state = [], action) {
       return (state = action.payload);
 
     case "ADD_TRAIL":
-      console.log(state);
-      console.log(action);
+      return [...state, action.payload]
 
     default:
       return state;

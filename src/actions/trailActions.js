@@ -8,7 +8,6 @@ export function fetchTrails() {
 }
 
 export function addTrail(name, length) {
-  console.log(name, length);
   return dispatch => {
     let body = JSON.stringify({
       trail: { name: name, length: length, created_by: 1 }
@@ -21,8 +20,9 @@ export function addTrail(name, length) {
       body: body
     })
       .then(response => {
-        response.json();
+        return response.json();
       })
-      .then(trail => dispatch({ type: "ADD_TRAIL", payload: trail }));
+      .then(trail => 
+        dispatch({ type: "ADD_TRAIL", payload: trail }));
   };
 }
