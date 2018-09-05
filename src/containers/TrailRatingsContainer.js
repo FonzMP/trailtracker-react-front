@@ -5,7 +5,6 @@ import Navigation from './Navigation'
 import { connect } from "react-redux";
 import { fetchRatings, addTrailRating, deleteTrailRating } from "../actions/trailRatingsActions";
 import { fetchTrails } from "../actions/trailActions";
-import { addTrailRating } from "../actions/trailRatingsActions"
 
 class TrailRatingsContainer extends Component {
   componentDidMount() {
