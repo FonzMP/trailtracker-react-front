@@ -9,6 +9,9 @@ export default function trailsReducer(state = [], action) {
     case "ADD_TRAIL":
       return [...state, action.payload]
 
+    case "DELETE_TRAIL":
+      return state.filter(trail => trail.id !== action.payload.id)
+
     default:
       return state;
   }

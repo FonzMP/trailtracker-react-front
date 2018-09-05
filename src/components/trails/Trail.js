@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 class Trail extends Component {
+
   render() {
     return (
       <div className="trail">
@@ -16,10 +17,11 @@ class Trail extends Component {
           <strong>Average Rating: </strong>
           <span>{this.props.trail.average_rating}</span>
         </p>
-        <p>
+        {/* <p>
           <strong>Contributed by: </strong>
           <span>{this.props.trail.created_by_username}</span>
-        </p>
+        </p> */}
+        <button onClick={() => this.props.delete(this.props.trail.id)}>Delete Trail</button>
       </div>
     );
   }
