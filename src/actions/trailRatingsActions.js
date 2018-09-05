@@ -8,3 +8,25 @@ export function fetchRatings() {
       );
   };
 }
+
+export function addTrailRating(user_id, trail_id, rating) {
+  return dispatch => {
+    let body = JSON.stringify({
+      trail_rating: { user_id: user_id, trail_id: trail_id, rating: rating }
+    });
+    return fetch("http://localhost:3001/trail_ratings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"      },
+      body: body
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(trail_rating => 
+        dispatch({ type: "ADD_TRAIL_RATING", payload: trail_rating }))
+        .catch( err => {
+          console.log(err)
+          })
+  }
+}

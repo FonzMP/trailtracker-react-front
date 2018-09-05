@@ -5,6 +5,7 @@ import Navigation from './Navigation'
 import { connect } from "react-redux";
 import { fetchRatings } from "../actions/trailRatingsActions";
 import { fetchTrails } from "../actions/trailActions";
+import { addTrailRating } from "../actions/trailRatingsActions"
 
 class TrailRatingsContainer extends Component {
   componentDidMount() {
@@ -18,7 +19,7 @@ class TrailRatingsContainer extends Component {
         <Navigation />
         <div className="content-body">
           <TrailRatings ratings={this.props.trail_ratings} />
-          <TrailRatingInput trails={this.props.trails} />
+          <TrailRatingInput trails={this.props.trails} addTrailRating={this.props.addTrailRating}/>
         </div>
       </div>
     )
@@ -27,7 +28,9 @@ class TrailRatingsContainer extends Component {
 
 function mapDispatchToProps(dispatch) {
   return { fetchRatings: () => dispatch(fetchRatings()),
-  fetchTrails: () => dispatch(fetchTrails()) };
+  fetchTrails: () => dispatch(fetchTrails()) ,
+  addTrailRating: (user_id, trail_id, rating) => dispatch(addTrailRating(user_id, trail_id, rating))
+  }
 }
 
 function mapStateToProps({ trail_ratings, trails }) {

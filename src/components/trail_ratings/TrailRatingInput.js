@@ -5,25 +5,24 @@ class TrailInput extends Component {
     super();
     this.state = {
       trails: [],
-      trail_id: 0,
-      user_id: 1,
-      rating: 0
+      trail_id: "0",
+      user_id: "1",
+      rating: "0"
     };
   }
 
   handleOnChange = e => {
     this.setState({
-      [e.target.name]: parseInt(e.target.value)
+      [e.target.name]: e.target.value
     });
   };
 
   handleOnSubmit = e => {
     e.preventDefault();
-    this.props.addTrail(this.state.name, this.state.length);
+    this.props.addTrailRating(this.state.user_id, this.state.trail_id, this.state.rating);
   };
 
   render() {
-    console.log(this.state)
     return (
       <div className="trail-input">
         <h3>Add a Trail Rating</h3>
@@ -46,7 +45,7 @@ class TrailInput extends Component {
             <option key='4' value='4' >4</option>
             <option key='5' value='5' >5 Most Difficult</option>
           </select>
-          <button type="submit">Add Trail</button>
+          <button type="submit">Add Trail Rating</button>
         </form>
       </div>
     );
