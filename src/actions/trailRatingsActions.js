@@ -27,3 +27,16 @@ export function addTrailRating(user_id, trail_id, rating) {
         dispatch({ type: "ADD_TRAIL_RATING", payload: trail_rating }))
   }
 }
+
+export function deleteTrailRating(ratingId) {
+  return dispatch => {
+    return fetch(`http://localhost:3001/trail_ratings/${ratingId}`, {
+      method: "DELETE"
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(trail_rating => 
+        dispatch({ type: "DELETE_RATING", payload: trail_rating }))
+  }
+}

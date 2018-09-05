@@ -19,6 +19,10 @@ class TrailInput extends Component {
   handleOnSubmit = e => {
     e.preventDefault();
     this.props.addTrail(this.state.name, this.state.length);
+    this.setState({
+      name: "",
+      length: ""
+    })
   };
 
   render() {
@@ -29,11 +33,11 @@ class TrailInput extends Component {
           <label>
             <strong>Name: </strong>
           </label>
-          <input onChange={this.handleOnChange} type="text" id="name" />
+          <input onChange={this.handleOnChange} type="text" id="name" value={this.state.name} placeholder="Trail Name" />
           <label>
             <strong>Length: </strong>
           </label>
-          <input onChange={this.handleOnChange} type="text" id="length" />
+          <input onChange={this.handleOnChange} type="text" id="length" value={this.state.length} placeholder="Trail Length" />
           <button type="submit">Add Trail</button>
         </form>
       </div>
