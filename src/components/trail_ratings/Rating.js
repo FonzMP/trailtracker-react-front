@@ -17,10 +17,6 @@ class Rating extends Component {
             <strong>Rating: </strong>
             <span>{this.props.rating.rating}</span>
           </p>
-          <p>
-            <strong>Rated by: </strong>
-            <span>{this.props.rating.user.username}</span>
-          </p>
           <button onClick={() => this.props.delete(this.props.rating.id)}>Delete Rating</button>
       </div>
     );
