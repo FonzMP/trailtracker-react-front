@@ -1,27 +1,35 @@
 import React, { Component } from "react";
+import ShowTrail from './ShowTrail'
+import EditTrail from './EditTrail'
 
 class Trail extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      showComponent: false
+    };
+  }
+
+  onEditClick = () => {
+    this.setState({
+      showComponent: !this.state.showComponent,
+    });
+  }
+
+  hideEditComponent = () => {
+    this.setState({
+      showComponent: false
+    })
+  }
+
   render() {
     return (
-      <div className="trail">
-        <p>
-          <strong>Name: </strong>
-          <span>{this.props.trail.name}</span>
-        </p>
-        <p>
-          <strong>Length: </strong>
-          <span>{this.props.trail.length}</span>
-        </p>
-        <p>
-          <strong>Average Rating: </strong>
-          <span>{this.props.trail.average_rating}</span>
-        </p>
-        {/* <p>
-          <strong>Contributed by: </strong>
-          <span>{this.props.trail.created_by_username}</span>
-        </p> */}
-        <button onClick={() => this.props.delete(this.props.trail.id)}>Delete Trail</button>
+      <div className="trail-container">
+        {this.state.showComponent ? 
+        <EditTrail trail={this.props.trail} update={this.props.update} showTrail={this.hideEditComponent} delete={this.props.delete} /> :
+        <ShowTrail trail={this.props.trail} edit={this.onEditClick} delete={this.props.delete} />
+        }
       </div>
     );
   }
