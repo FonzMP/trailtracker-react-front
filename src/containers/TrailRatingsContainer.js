@@ -17,8 +17,8 @@ class TrailRatingsContainer extends Component {
       <div>
         <Navigation />
         <div className="content-body">
-          <TrailRatings ratings={this.props.trail_ratings} delete={this.props.deleteTrailRating} />
           <TrailRatingInput trails={this.props.trails} addTrailRating={this.props.addTrailRating}/>
+          <TrailRatings ratings={this.props.trail_ratings} delete={this.props.deleteTrailRating} />
         </div>
       </div>
     )
