@@ -39,3 +39,24 @@ export function deleteTrail(trailId) {
         dispatch({ type: "DELETE_TRAIL", payload: trail }));
   };
 }
+
+export function updateTrail(trailId, name, length) {
+  return dispatch => {
+    let body = JSON.stringify({
+      trail: { name: name, length: length, created_by: 1 }
+    });
+    return fetch(`http://localhost:3001/trails/${trailId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: body
+    })
+    .then(response => {
+        console.log(response)
+        return response.json();
+      })
+      .then(trail => 
+        dispatch({ type: "EDIT_TRAIL", payload: trail }));
+  };
+}
