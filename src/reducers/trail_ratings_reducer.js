@@ -7,7 +7,13 @@ export default function ratingsReducer(state = [], action) {
     case "ADD_TRAIL_RATING":
       return [...state, action.payload]
 
-      case "DELETE_RATING":
+    case "EDIT_TRAIL_RATING":
+      return [
+        ...state.filter(trail_rating => trail_rating.id !== action.payload.id),
+        Object.assign({}, action.payload)
+      ]
+
+    case "DELETE_RATING":
       return state.filter(rating => rating.id !== action.payload.id)
 
     default:

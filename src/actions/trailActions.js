@@ -53,7 +53,6 @@ export function updateTrail(trailId, name, length) {
       body: body
     })
     .then(response => {
-        console.log(response)
         return response.json();
       })
       .then(trail => 

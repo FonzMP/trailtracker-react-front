@@ -4,7 +4,7 @@ import TrailRating from "./Rating";
 class Ratings extends Component {
   renderRatings = () => {
     return this.props.ratings.map(trail_rating => {
-      return <TrailRating key={trail_rating.id} rating={trail_rating} delete={this.props.delete} />;
+      return <TrailRating key={trail_rating.id} rating={trail_rating} delete={this.props.delete} update={this.props.update} />;
     });
   };
 

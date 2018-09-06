@@ -40,3 +40,25 @@ export function deleteTrailRating(ratingId) {
         dispatch({ type: "DELETE_RATING", payload: trail_rating }))
   }
 }
+
+export function updateTrailRating(trailId, name, length, rating) {
+  return dispatch => {
+    let body = JSON.stringify({
+      trail_rating: { name: name, length: length, rating: rating }
+    });
+    console.log(body)
+    return fetch(`http://localhost:3001/trail_ratings/${trailId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: body
+    })
+    .then(response => {
+      console.log(response)
+        return response.json();
+      })
+      .then(trail_rating => 
+        dispatch({ type: "EDIT_TRAIL_RATING", payload: trail_rating }));
+  };
+}
