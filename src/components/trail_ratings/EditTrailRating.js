@@ -4,8 +4,6 @@ class EditTrailRating extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: props.rating.name,
-      length: props.rating.length,
       rating: props.rating.rating
     }
   }
@@ -36,7 +34,7 @@ class EditTrailRating extends Component {
           <strong>Rating: </strong>
           <input onChange={this.handleOnChange} value={this.state.rating} id="rating" ></input>
         </p>
-        <button onClick={() => this.updateTrailRating(this.props.rating.id, this.state.name, this.state.length, this.state.rating)}>Save Trail Rating</button>
+        <button onClick={() => this.updateTrailRating(this.props.rating.id, this.props.rating.name, this.props.rating.length, this.state.rating)}>Save Trail Rating</button>
         <button onClick={() => this.props.delete(this.props.rating.id)}>Delete Trail Rating</button>
       </div>
     )

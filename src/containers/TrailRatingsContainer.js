@@ -35,10 +35,11 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps({ trail_ratings, trails }) {
-  const myData = [].concat(trail_ratings).sort((a, b) => a.trail.name > b.trail.name)
+  const ratingData = [].concat(trail_ratings).sort((a, b) => a.trail.name > b.trail.name);
+  const trailData = [].concat(trails).sort((a, b) => a.name > b.name);
   return { 
-    trail_ratings: myData,
-    trails: trails 
+    trail_ratings: ratingData,
+    trails: trailData 
   };
 }
 
