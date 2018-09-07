@@ -13,10 +13,11 @@
 .trail {
   background: lightgrey;
   padding: 5px 20px;
-  margin: 10px 20px;
+  margin: 10px auto;
   border-radius: 20px;
-  width: 40%;
-  display: inline-block;
+  width: 90%;
+  max-width: 500px;
+  display: block;
   box-shadow: 5px 3px rgba(0, 0, 0, 0.5);
   font-family: "Patua One", cursive;
   font-size: 1.1em;
