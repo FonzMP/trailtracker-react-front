@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
-@import url('https://fonts.googleapis.com/css?family=Patua+One');
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif");
+@import url("https://fonts.googleapis.com/css?family=Patua+One");
 /* 
   font-family: 'Bree Serif', serif;
   font-family: 'Patua One', cursive;
@@ -17,13 +17,13 @@
   border-radius: 20px;
   width: 40%;
   display: inline-block;
-  box-shadow: 5px 3px rgba(0, 0, 0, .5);
-  font-family: 'Patua One', cursive;
+  box-shadow: 5px 3px rgba(0, 0, 0, 0.5);
+  font-family: "Patua One", cursive;
   font-size: 1.1em;
 }
 
 .trail span {
-  font-family: 'Bree Serif', serif;
+  font-family: "Bree Serif", serif;
   font-size: 1.2em;
 }
 
@@ -32,12 +32,12 @@
   text-align: center;
   font-size: 3em;
   margin: 30px 0px 20px;
-  font-family: 'Patua One', cursive;
+  font-family: "Patua One", cursive;
 }
 
 .trail-input {
   width: 70%;
-  margin: 0 auto 20px;
+  margin: 35px auto 50px;
   text-align: center;
 }
 
@@ -48,4 +48,8 @@
 
 input#length {
   width: 80px;
+}
+#input-link {
+  text-decoration: none;
+  font-size: 1.3em;
 }

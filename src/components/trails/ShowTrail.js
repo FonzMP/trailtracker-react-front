@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class ShowTrail extends Component {
-
   render() {
     return (
       <div className="trail">
@@ -15,10 +14,18 @@ class ShowTrail extends Component {
         </p>
         <p>
           <strong>Average Rating: </strong>
-          <span>{this.props.trail.average_rating.toFixed(1)}</span>
+          <span>
+            {Number(this.props.trail.average_rating) ===
+              this.props.trail.average_rating &&
+            this.props.trail.average_rating % 1 !== 0
+              ? this.props.trail.average_rating.toFixed(1)
+              : this.props.trail.average_rating}
+          </span>
         </p>
         <button onClick={() => this.props.edit()}>Edit Trail</button>
-        <button onClick={() => this.props.delete(this.props.trail.id)}>Delete Trail</button>
+        <button onClick={() => this.props.delete(this.props.trail.id)}>
+          Delete Trail
+        </button>
       </div>
     );
   }
