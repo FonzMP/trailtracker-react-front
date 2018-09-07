@@ -15,7 +15,7 @@ class ShowTrail extends Component {
         </p>
         <p>
           <strong>Average Rating: </strong>
-          <span>{this.props.trail.average_rating}</span>
+          <span>{this.props.trail.average_rating.toFixed(1)}</span>
         </p>
         <button onClick={() => this.props.edit()}>Edit Trail</button>
         <button onClick={() => this.props.delete(this.props.trail.id)}>Delete Trail</button>

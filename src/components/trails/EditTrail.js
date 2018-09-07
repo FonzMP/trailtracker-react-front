@@ -29,7 +29,7 @@ class EditTrail extends Component {
         </p>
         <p>
           <strong>Edit Length: </strong>
-          <input onChange={this.handleOnChange} value={this.state.length} key={this.props.trail.id} id="length" ></input>
+          <input type="number" onChange={this.handleOnChange} value={this.state.length} key={this.props.trail.id} id="length" min="0" max="50" step="0.1" ></input>
         </p>
         <p>
           <strong>Average Rating: </strong>
