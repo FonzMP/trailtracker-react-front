@@ -40,7 +40,7 @@ class TrailsContainer extends Component {
             delete={this.props.deleteTrail}
             update={this.props.updateTrail}
           />
-          <div className="trail-input" id="input">
+          <div className="trail-input">
             <a onClick={this.showAddComponent} id="input-link" href="#input">
               {this.state.showComponent ? "Hide Trail Form" : "Add A Trail"}
             </a>
