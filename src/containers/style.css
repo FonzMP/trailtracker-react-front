@@ -45,3 +45,7 @@
   display: block;
   margin: 10px auto;
 }
+
+input#length {
+  width: 80px;
+}

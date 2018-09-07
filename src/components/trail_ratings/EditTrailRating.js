@@ -32,7 +32,13 @@ class EditTrailRating extends Component {
           </p>
         <p>
           <strong>Rating: </strong>
-          <input onChange={this.handleOnChange} value={this.state.rating} id="rating" ></input>
+          <select id="rating" onChange={this.handleOnChange} >
+            <option key='1' value='1' >1 Easiest</option>
+            <option key='2' value='2' >2</option>
+            <option key='3' value='3' >3 Average</option>
+            <option key='4' value='4' >4</option>
+            <option key='5' value='5' >5 Most Difficult</option>
+          </select>
         </p>
         <button onClick={() => this.updateTrailRating(this.props.rating.id, this.props.rating.name, this.props.rating.length, this.state.rating)}>Save Trail Rating</button>
         <button onClick={() => this.props.delete(this.props.rating.id)}>Delete Trail Rating</button>
