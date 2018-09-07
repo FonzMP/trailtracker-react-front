@@ -10,6 +10,7 @@ import {
   updateTrailRating
 } from "../actions/trailRatingsActions";
 import { fetchTrails } from "../actions/trailActions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class TrailRatingsContainer extends Component {
   constructor() {
@@ -40,19 +41,22 @@ class TrailRatingsContainer extends Component {
             update={this.props.updateTrailRating}
           />
           <div className="trail-input" id="rating-input">
-            <a
-              onClick={this.showAddComponent}
-              id="input-link"
-              href="#rating-input"
-            >
-              {this.state.showComponent ? "Hide Rating Form" : "Add A Rating"}
-            </a>
-            {this.state.showComponent ? (
-              <TrailRatingInput
-                trails={this.props.trails}
-                addTrailRating={this.props.addTrailRating}
-              />
-            ) : null}
+            <div className="add-container">
+              <FontAwesomeIcon icon="star-half-alt" />
+              <a
+                onClick={this.showAddComponent}
+                className="input-link"
+                href="#rating-input"
+              >
+                {this.state.showComponent ? "Hide Rating Form" : "Add A Rating"}
+              </a>
+              {this.state.showComponent ? (
+                <TrailRatingInput
+                  trails={this.props.trails}
+                  addTrailRating={this.props.addTrailRating}
+                />
+              ) : null}
+            </div>
           </div>
         </div>
       </div>

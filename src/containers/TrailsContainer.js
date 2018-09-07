@@ -10,6 +10,7 @@ import {
   updateTrail
 } from "../actions/trailActions";
 import "../containers/style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class TrailsContainer extends Component {
   constructor() {
@@ -41,8 +42,13 @@ class TrailsContainer extends Component {
             update={this.props.updateTrail}
           />
           <div className="trail-input">
-            <a onClick={this.showAddComponent} id="input-link" href="#input">
-              {this.state.showComponent ? "Hide Trail Form" : "Add A Trail"}
+            <FontAwesomeIcon icon="map-marked" />
+            <a
+              onClick={this.showAddComponent}
+              className="input-link"
+              href="#input"
+            >
+              {this.state.showComponent ? " Hide Trail Form" : " Add A Trail"}
             </a>
             {this.state.showComponent ? (
               <TrailInput
