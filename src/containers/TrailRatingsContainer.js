@@ -10,6 +10,7 @@ import {
 } from "../actions/trailRatingsActions";
 import { fetchTrails } from "../actions/trailActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ClipLoader } from 'react-spinners';
 
 class TrailRatingsContainer extends Component {
   constructor() {
@@ -32,6 +33,18 @@ class TrailRatingsContainer extends Component {
   render() {
     return (
       <div>
+        <h3 className="content-header">Trail Ratings</h3>
+      {this.props.isLoading ? 
+        <div className="center">
+          <ClipLoader
+        sizeUnit={"px"}
+        size={150}
+        color={'#123abc'}
+        loading={this.props.isLoading}
+        />
+        </div>
+        : 
+        
         <div className="content-body">
           <TrailRatings
             ratings={this.props.trail_ratings}
@@ -57,6 +70,7 @@ class TrailRatingsContainer extends Component {
             </div>
           </div>
         </div>
+        }
       </div>
     );
   }
@@ -74,15 +88,15 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function mapStateToProps({ trail_ratings, trails }) {
+function mapStateToProps(state) {
   const ratingData = []
-    .concat(trail_ratings)
+    .concat(state.trail_ratings.ratings)
     .sort((a, b) => a.trail.name > b.trail.name);
-  const trailData = [].concat(trails).sort((a, b) => a.name > b.name);
+  const trailData = [].concat(state.trails.trails).sort((a, b) => a.name > b.name);
   return {
     trail_ratings: ratingData,
     trails: trailData,
-    loading: trail_ratings.loading
+    isLoading: state.trail_ratings.isLoading
   };
 }
 

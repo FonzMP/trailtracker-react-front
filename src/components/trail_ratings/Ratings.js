@@ -11,7 +11,6 @@ class Ratings extends Component {
   render() {
     return (
       <div>
-        <h3 className="content-header">Trail Ratings</h3>
         <div className="trails">{this.renderRatings()}</div>
       </div>
     );

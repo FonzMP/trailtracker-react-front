@@ -46,7 +46,6 @@ export function updateTrailRating(trailId, name, length, rating) {
     let body = JSON.stringify({
       trail_rating: { name: name, length: length, rating: rating }
     });
-    console.log(body)
     return fetch(`http://localhost:3001/trail_ratings/${trailId}`, {
       method: "PATCH",
       headers: {
@@ -55,7 +54,6 @@ export function updateTrailRating(trailId, name, length, rating) {
       body: body
     })
     .then(response => {
-      console.log(response)
         return response.json();
       })
       .then(trail_rating => 
