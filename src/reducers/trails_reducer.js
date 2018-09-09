@@ -1,22 +1,22 @@
-export default function trailsReducer(state = [], action) {
+export default function trailsReducer(state = {isLoading: false, trails: []}, action) {
   switch (action.type) {
     case "LOADING_TRAILS":
-      return (state = []);
+      return state = {isLoading: true, trails: []}
 
     case "FETCH_TRAILS":
-      return (state = action.payload);
+      return (state = {isLoading: false, trails: action.payload});
 
     case "ADD_TRAIL":
-      return [...state, action.payload]
+      return (state = {isLoading: false, trails: [...state.trails, action.payload]})
 
     case "EDIT_TRAIL":
-      return [
-        ...state.filter(trail => trail.id !== action.payload.id),
+      return state = {isLoading: false, trails: [
+        ...state.trails.filter(trail => trail.id !== action.payload.id),
         Object.assign({}, action.payload)
-      ]
+      ]}
 
     case "DELETE_TRAIL":
-      return state.filter(trail => trail.id !== action.payload.id)
+      return state = {isLoading: false, trails: [...state.trails.filter(trail => trail.id !== action.payload.id)]}
 
     default:
       return state;

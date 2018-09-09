@@ -10,6 +10,7 @@ import {
 } from "../actions/trailActions";
 import "../containers/style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ClipLoader } from 'react-spinners';
 
 class TrailsContainer extends Component {
   constructor() {
@@ -33,29 +34,40 @@ class TrailsContainer extends Component {
   render() {
     return (
       <div>
-        <div className="content-body">
-          <Trails
-            trails={this.props.trails}
-            delete={this.props.deleteTrail}
-            update={this.props.updateTrail}
-          />
-          <div className="trail-input">
-            <FontAwesomeIcon icon="map-marked" />
-            <a
-              onClick={this.showAddComponent}
-              className="input-link"
-              href="#enter"
-            >
-              {this.state.showComponent ? " Hide Trail Form" : " Add A Trail"}
-            </a>
-            {this.state.showComponent ? (
-              <TrailInput
-                trails={this.props.trails}
-                addTrail={this.props.addTrail}
-              />
-            ) : null}
+        <h3 className="content-header">Trails</h3>
+          {this.props.isLoading ? 
+          <div className="center">
+            <ClipLoader
+            sizeUnit={"px"}
+            size={150}
+            color={'#123abc'}
+            loading={this.props.isLoading}
+            />
           </div>
-        </div>
+        : <div className="content-body">
+            <Trails
+              trails={this.props.trails}
+              delete={this.props.deleteTrail}
+              update={this.props.updateTrail}
+            />
+            <div className="trail-input">
+              <FontAwesomeIcon icon="map-marked" />
+              <a
+                onClick={this.showAddComponent}
+                className="input-link"
+                href="#enter"
+              >
+                {this.state.showComponent ? " Hide Trail Form" : " Add A Trail"}
+              </a>
+              {this.state.showComponent ? (
+                <TrailInput
+                  trails={this.props.trails}
+                  addTrail={this.props.addTrail}
+                />
+              ) : null}
+            </div>
+          </div>
+        }
       </div>
     );
   }
@@ -70,9 +82,10 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function mapStateToProps({ trails }) {
-  const myData = [].concat(trails).sort((a, b) => a.name > b.name);
-  return { trails: myData };
+function mapStateToProps(state) {
+  const myData = [].concat(state.trails.trails).sort((a, b) => a.name > b.name);
+  return { trails: myData,
+  isLoading: state.trails.isLoading };
 }
 
 export default connect(
