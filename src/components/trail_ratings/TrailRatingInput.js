@@ -7,7 +7,7 @@ class TrailInput extends Component {
       trails: [],
       trail_id: "",
       user_id: "1",
-      rating: "1",
+      rating: "3",
       hasError: false
     };
   }
@@ -38,7 +38,6 @@ class TrailInput extends Component {
       });
       message = "";
     }
-    console.log(message);
     return message;
   };
 
@@ -63,7 +62,7 @@ class TrailInput extends Component {
           <label>
             <strong>Rating: </strong>
           </label>
-          <select name="rating" onChange={this.handleOnChange}>
+          <select name="rating" onChange={this.handleOnChange} defaultValue={3}>
             <option key="1" value="1">
               1 Easiest
             </option>
