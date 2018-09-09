@@ -50,7 +50,7 @@ class TrailInput extends Component {
             onChange={this.handleOnChange}
             type="number"
             id="length"
-            min="0"
+            min="0.1"
             max="50"
             step="0.1"
             value={this.state.length}
