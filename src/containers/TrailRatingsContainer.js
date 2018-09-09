@@ -82,7 +82,8 @@ function mapStateToProps({ trail_ratings, trails }) {
   const trailData = [].concat(trails).sort((a, b) => a.name > b.name);
   return {
     trail_ratings: ratingData,
-    trails: trailData
+    trails: trailData,
+    loading: trail_ratings.loading
   };
 }
 
