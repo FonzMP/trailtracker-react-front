@@ -4,7 +4,7 @@ class EditTrailRating extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rating: props.rating.rating
+      rating: "3"
     };
   }
 
@@ -32,7 +32,7 @@ class EditTrailRating extends Component {
         </p>
         <p>
           <strong>Rating: </strong>
-          <select id="rating" onChange={this.handleOnChange}>
+          <select id="rating" onChange={this.handleOnChange} defaultValue={3}>
             <option key="1" value="1">
               1 Easiest
             </option>
