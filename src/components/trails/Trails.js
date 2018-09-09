@@ -12,7 +12,6 @@ class Trails extends Component {
   render() {
     return (
       <div>
-        <h3 className="content-header">Trails</h3>
         <div className="trails">{this.renderTrails()}</div>
       </div>
     );

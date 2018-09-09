@@ -5,6 +5,13 @@
   font-family: 'Patua One', cursive;
 */
 
+.center {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  height: 200px;
+}
+
 .content-body {
   margin: 0 auto;
   width: 80%;
