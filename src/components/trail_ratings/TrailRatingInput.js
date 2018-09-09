@@ -5,9 +5,10 @@ class TrailInput extends Component {
     super();
     this.state = {
       trails: [],
-      trail_id: "0",
+      trail_id: "",
       user_id: "1",
-      rating: "0"
+      rating: "1",
+      hasError: false
     };
   }
 
@@ -19,11 +20,26 @@ class TrailInput extends Component {
 
   handleOnSubmit = e => {
     e.preventDefault();
-    this.props.addTrailRating(
-      this.state.user_id,
-      this.state.trail_id,
-      this.state.rating
-    );
+    let message = "";
+    if (this.state.trail_id !== "") {
+      return (
+        this.props.addTrailRating(
+          this.state.user_id,
+          this.state.trail_id,
+          this.state.rating
+        ),
+        this.setState({
+          hasError: false
+        })
+      );
+    } else {
+      this.setState({
+        hasError: true
+      });
+      message = "";
+    }
+    console.log(message);
+    return message;
   };
 
   render() {
@@ -35,6 +51,7 @@ class TrailInput extends Component {
             <strong>Name: </strong>
           </label>
           <select name="trail_id" onChange={this.handleOnChange}>
+            <option key="blank" placeholder="select a trail" value="" />
             {this.props.trails.map(trail => {
               return (
                 <option key={trail.id} value={trail.id}>
@@ -65,6 +82,7 @@ class TrailInput extends Component {
           </select>
           <button type="submit">Add Trail Rating</button>
         </form>
+        {this.state.hasError ? <h5>Please select a trail name.</h5> : null}
         <div id="enter" />
       </div>
     );
