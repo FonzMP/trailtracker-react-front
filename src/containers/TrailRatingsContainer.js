@@ -33,7 +33,6 @@ class TrailRatingsContainer extends Component {
   render() {
     return (
       <div>
-        <Navigation />
         <div className="content-body">
           <TrailRatings
             ratings={this.props.trail_ratings}
