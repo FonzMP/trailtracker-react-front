@@ -44,7 +44,7 @@ class TrailsContainer extends Component {
             <a
               onClick={this.showAddComponent}
               className="input-link"
-              href="#input"
+              href="#enter"
             >
               {this.state.showComponent ? " Hide Trail Form" : " Add A Trail"}
             </a>

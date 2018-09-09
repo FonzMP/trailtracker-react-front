@@ -38,13 +38,13 @@ class TrailRatingsContainer extends Component {
             delete={this.props.deleteTrailRating}
             update={this.props.updateTrailRating}
           />
-          <div className="trail-input" id="rating-input">
+          <div className="trail-input">
             <div className="add-container">
               <FontAwesomeIcon icon="star-half-alt" />
               <a
                 onClick={this.showAddComponent}
                 className="input-link"
-                href="#rating-input"
+                href="#enter"
               >
                 {this.state.showComponent ? "Hide Rating Form" : "Add A Rating"}
               </a>

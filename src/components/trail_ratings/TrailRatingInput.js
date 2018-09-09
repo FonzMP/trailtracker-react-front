@@ -47,6 +47,7 @@ class TrailInput extends Component {
           </select>
           <button type="submit">Add Trail Rating</button>
         </form>
+        <div id="enter"></div>
       </div>
     );
   }

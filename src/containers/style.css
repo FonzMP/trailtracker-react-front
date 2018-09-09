@@ -42,7 +42,7 @@
   text-align: center;
 }
 
-.trail-input input {
+.trail-input input, .trail-input select {
   display: block;
   margin: 10px auto;
 }
