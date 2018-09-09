@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import Navigation from "./containers/Navigation";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMapMarked, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 

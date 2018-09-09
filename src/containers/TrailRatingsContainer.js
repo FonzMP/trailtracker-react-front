@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import TrailRatings from "../components/trail_ratings/Ratings";
 import TrailRatingInput from "../components/trail_ratings/TrailRatingInput";
-import Navigation from "./Navigation";
 import { connect } from "react-redux";
 import {
   fetchRatings,
