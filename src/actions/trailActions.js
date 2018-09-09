@@ -22,8 +22,7 @@ export function addTrail(name, length) {
       .then(response => {
         return response.json();
       })
-      .then(trail => 
-        dispatch({ type: "ADD_TRAIL", payload: trail }));
+      .then(trail => dispatch({ type: "ADD_TRAIL", payload: trail }));
   };
 }
 
@@ -35,8 +34,7 @@ export function deleteTrail(trailId) {
       .then(response => {
         return response.json();
       })
-      .then(trail => 
-        dispatch({ type: "DELETE_TRAIL", payload: trail }));
+      .then(trail => dispatch({ type: "DELETE_TRAIL", payload: trail }));
   };
 }
 
@@ -52,10 +50,9 @@ export function updateTrail(trailId, name, length) {
       },
       body: body
     })
-    .then(response => {
+      .then(response => {
         return response.json();
       })
-      .then(trail => 
-        dispatch({ type: "EDIT_TRAIL", payload: trail }));
+      .then(trail => dispatch({ type: "EDIT_TRAIL", payload: trail }));
   };
 }

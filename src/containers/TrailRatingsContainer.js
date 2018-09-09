@@ -10,7 +10,7 @@ import {
 } from "../actions/trailRatingsActions";
 import { fetchTrails } from "../actions/trailActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ClipLoader } from 'react-spinners';
+import { ClipLoader } from "react-spinners";
 
 class TrailRatingsContainer extends Component {
   constructor() {
@@ -34,43 +34,44 @@ class TrailRatingsContainer extends Component {
     return (
       <div>
         <h3 className="content-header">Trail Ratings</h3>
-      {this.props.isLoading ? 
-        <div className="center">
-          <ClipLoader
-        sizeUnit={"px"}
-        size={150}
-        color={'#123abc'}
-        loading={this.props.isLoading}
-        />
-        </div>
-        : 
-        
-        <div className="content-body">
-          <TrailRatings
-            ratings={this.props.trail_ratings}
-            delete={this.props.deleteTrailRating}
-            update={this.props.updateTrailRating}
-          />
-          <div className="trail-input">
-            <div className="add-container">
-              <FontAwesomeIcon icon="star-half-alt" />
-              <a
-                onClick={this.showAddComponent}
-                className="input-link"
-                href="#enter"
-              >
-                {this.state.showComponent ? "Hide Rating Form" : "Add A Rating"}
-              </a>
-              {this.state.showComponent ? (
-                <TrailRatingInput
-                  trails={this.props.trails}
-                  addTrailRating={this.props.addTrailRating}
-                />
-              ) : null}
+        {this.props.isLoading ? (
+          <div className="center">
+            <ClipLoader
+              sizeUnit={"px"}
+              size={150}
+              color={"#123abc"}
+              loading={this.props.isLoading}
+            />
+          </div>
+        ) : (
+          <div className="content-body">
+            <TrailRatings
+              ratings={this.props.trail_ratings}
+              delete={this.props.deleteTrailRating}
+              update={this.props.updateTrailRating}
+            />
+            <div className="trail-input">
+              <div className="add-container">
+                <FontAwesomeIcon icon="star-half-alt" />
+                <a
+                  onClick={this.showAddComponent}
+                  className="input-link"
+                  href="#enter"
+                >
+                  {this.state.showComponent
+                    ? "Hide Rating Form"
+                    : "Add A Rating"}
+                </a>
+                {this.state.showComponent ? (
+                  <TrailRatingInput
+                    trails={this.props.trails}
+                    addTrailRating={this.props.addTrailRating}
+                  />
+                ) : null}
+              </div>
             </div>
           </div>
-        </div>
-        }
+        )}
       </div>
     );
   }
@@ -92,7 +93,9 @@ function mapStateToProps(state) {
   const ratingData = []
     .concat(state.trail_ratings.ratings)
     .sort((a, b) => a.trail.name > b.trail.name);
-  const trailData = [].concat(state.trails.trails).sort((a, b) => a.name > b.name);
+  const trailData = []
+    .concat(state.trails.trails)
+    .sort((a, b) => a.name > b.name);
   return {
     trail_ratings: ratingData,
     trails: trailData,

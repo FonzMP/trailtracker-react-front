@@ -22,7 +22,7 @@ class TrailInput extends Component {
     this.setState({
       name: "",
       length: ""
-    })
+    });
   };
 
   render() {
@@ -33,15 +33,30 @@ class TrailInput extends Component {
           <label>
             <strong>Name: </strong>
           </label>
-          <input onChange={this.handleOnChange} type="text" id="name" value={this.state.name} placeholder=" Trail Name" />
+          <input
+            onChange={this.handleOnChange}
+            type="text"
+            id="name"
+            value={this.state.name}
+            placeholder=" Trail Name"
+          />
           <label>
             <strong>Length: </strong>
           </label>
           <div className="lighten">(Between 0 and 50)</div>
-          <input onChange={this.handleOnChange} type="number" id="length" min="0" max="50" step="0.1" value={this.state.length} placeholder=" Length" />
-          <button type="submit" >Add Trail</button>
+          <input
+            onChange={this.handleOnChange}
+            type="number"
+            id="length"
+            min="0"
+            max="50"
+            step="0.1"
+            value={this.state.length}
+            placeholder=" Length"
+          />
+          <button type="submit">Add Trail</button>
         </form>
-        <div id="enter"></div>
+        <div id="enter" />
       </div>
     );
   }

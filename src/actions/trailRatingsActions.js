@@ -17,15 +17,17 @@ export function addTrailRating(user_id, trail_id, rating) {
     return fetch("http://localhost:3001/trail_ratings", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"      },
+        "Content-Type": "application/json"
+      },
       body: body
     })
       .then(response => {
         return response.json();
       })
-      .then(trail_rating => 
-        dispatch({ type: "ADD_TRAIL_RATING", payload: trail_rating }))
-  }
+      .then(trail_rating =>
+        dispatch({ type: "ADD_TRAIL_RATING", payload: trail_rating })
+      );
+  };
 }
 
 export function deleteTrailRating(ratingId) {
@@ -36,9 +38,10 @@ export function deleteTrailRating(ratingId) {
       .then(response => {
         return response.json();
       })
-      .then(trail_rating => 
-        dispatch({ type: "DELETE_RATING", payload: trail_rating }))
-  }
+      .then(trail_rating =>
+        dispatch({ type: "DELETE_RATING", payload: trail_rating })
+      );
+  };
 }
 
 export function updateTrailRating(trailId, name, length, rating) {
@@ -53,10 +56,11 @@ export function updateTrailRating(trailId, name, length, rating) {
       },
       body: body
     })
-    .then(response => {
+      .then(response => {
         return response.json();
       })
-      .then(trail_rating => 
-        dispatch({ type: "EDIT_TRAIL_RATING", payload: trail_rating }));
+      .then(trail_rating =>
+        dispatch({ type: "EDIT_TRAIL_RATING", payload: trail_rating })
+      );
   };
 }
