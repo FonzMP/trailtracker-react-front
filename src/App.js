@@ -10,7 +10,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navigation />
         <p>
           TrailTracker is an application designed to provide ease of mind for
           the solo, and/or safety concious rider in all of us. Our focus is to
