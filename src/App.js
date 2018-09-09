@@ -10,13 +10,21 @@ class App extends Component {
     return (
       <div className="App">
         <div className="content-body">
-          <p>
-            TrailTracker is an application designed to provide ease of mind for
-            the solo, and/or safety concious rider in all of us. Our focus is to
-            provide an application that assists in keeping our users safe while
-            adventuring alone, in small groups, or with friends in the great
-            outdoors.
-          </p>
+          <div id="main-page">
+            <img
+              src={require("./assets/img/baja_beach.jpg")}
+              id="baja"
+              className="inline"
+              alt="dirt bike on beach"
+            />
+            <p className="inline">
+              TrailTracker is an application designed to provide ease of mind
+              for the solo, and/or safety concious rider in all of us. Our focus
+              is to provide an application that assists in keeping our users
+              safe while adventuring alone, in small groups, or with friends in
+              the great outdoors.
+            </p>
+          </div>
         </div>
       </div>
     );

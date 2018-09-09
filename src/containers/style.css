@@ -49,7 +49,8 @@
   text-align: center;
 }
 
-.trail-input input, .trail-input select {
+.trail-input input,
+.trail-input select {
   display: block;
   margin: 10px auto;
 }
@@ -65,4 +66,22 @@ input#length {
 .lighten {
   opacity: 0.6;
   font-size: 0.9em;
+}
+
+#baja {
+  width: 30%;
+  float: right;
+}
+
+.inline {
+  display: inline-block;
+}
+
+p.inline {
+  width: 60%;
+}
+
+#main-page {
+  margin: 20px 0;
+  width: 90%;
 }
