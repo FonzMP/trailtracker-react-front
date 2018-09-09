@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class TrailInput extends Component {
+class TrailRatingInput extends Component {
   constructor() {
     super();
     this.state = {
@@ -88,4 +88,4 @@ class TrailInput extends Component {
   }
 }
 
-export default TrailInput;
+export default TrailRatingInput;
