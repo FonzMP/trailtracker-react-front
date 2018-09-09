@@ -37,6 +37,7 @@ class TrailInput extends Component {
           <label>
             <strong>Length: </strong>
           </label>
+          <div className="lighten">(Between 0 and 50)</div>
           <input onChange={this.handleOnChange} type="number" id="length" min="0" max="50" step="0.1" value={this.state.length} placeholder=" Length" />
           <button type="submit">Add Trail</button>
         </form>
