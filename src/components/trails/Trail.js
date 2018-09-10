@@ -1,38 +1,20 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import ShowTrail from './ShowTrail'
 import EditTrail from './EditTrail'
+import Toggle from '../../utilities/Toggle'
 
-class Trail extends Component {
+const Trail = ({ trail, update, delete: deleteAction }) => (
+  <div className="trail-container">
+    <Toggle>
+      {({ on, toggle }) => {
+        return on ? (
+          <EditTrail trail={trail} update={update} showTrail={toggle} delete={deleteAction} />
+        ) : (
+          <ShowTrail trail={trail} edit={toggle} delete={deleteAction} />
+        )
+      }}
+    </Toggle>
+  </div>
+)
 
-  constructor() {
-    super();
-    this.state = {
-      showComponent: false
-    };
-  }
-
-  onEditClick = () => {
-    this.setState({
-      showComponent: !this.state.showComponent,
-    });
-  }
-
-  hideEditComponent = () => {
-    this.setState({
-      showComponent: false
-    })
-  }
-
-  render() {
-    return (
-      <div className="trail-container">
-        {this.state.showComponent ? 
-        <EditTrail trail={this.props.trail} update={this.props.update} showTrail={this.hideEditComponent} delete={this.props.delete} /> :
-        <ShowTrail trail={this.props.trail} edit={this.onEditClick} delete={this.props.delete} />
-        }
-      </div>
-    );
-  }
-}
-
-export default Trail;
+export default Trail
